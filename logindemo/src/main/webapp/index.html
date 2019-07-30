@@ -1,0 +1,106 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/columns.js"></script>
+<script type="text/javascript" src="js/pie.js"></script>
+<script type="text/javascript" src="js/line.js"></script>
+<script type="text/javascript" src="js/radar.js"></script>
+<script type="text/javascript" src="js/jquery-form.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript"
+	src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126&ak=rFpg7C2wNgmPRfK8bK0mAkUgIxrq28iI"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript"
+	src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
+<link href="css/my.css" rel="stylesheet" type="text/css" />
+<link href="css/layui.css" rel="stylesheet" type="text/css" />
+<link href="css/head.css" rel="stylesheet" type="text/css" />
+<body style="height: 100%">
+	 <ul>
+          <li id="welcome" class="myhead">&nbsp;</li>
+          <li class="myhead"><button id = "admin" class="layui-btn layui-btn-warm  layui-btn-xs" style="display: none;">权限管理</button></li>
+          <li class="myhead"><button id = "password" class="layui-btn  layui-btn-xs">密码修改</button></li>
+          <li class="myhead"><button id = "loginout" class="layui-btn layui-btn-danger layui-btn-xs">退出</button></li>
+	</ul>
+	<br/><br/><br/><br/>
+	<center>
+		<a style="font-size: 35px; font-family: '仿宋';">用户信息系统</a> <br /> <br />
+		<form name="form" id="form" method="post">
+			ID： <input type="text" id="id" name="id" readonly="readonly" value="" />
+			Name：<input type="text" id="name" name="name" value="" /> Age：<input
+				type="text" id="age" name="age" value="" /> 根据ID查询:<input
+				type="text" id="queryid" name="queryid" value="" /> <input
+				type="button" value="查询" id="query"
+				class="layui-btn layui-btn-normal layui-btn-radius" /><input
+				type="button" value="增加" id="add" class="layui-btn" /> <input
+				type="button" value="删除" id="delete"
+				class="layui-btn layui-btn-danger" /> <input type="button"
+				value="修改" id="update" class="layui-btn layui-btn-warm" />
+		</form>
+	</center>
+	<br />
+	<br />
+	<br />
+	<br />
+	<span class="sp">
+		<div class="dtab">
+			<label class="mylable">用户信息</label><div style="float: right;padding-bottom: 9px;"><input type="button" id="in"
+				value="导入Excel " style="padding-bottom: 0px;padding-top: 0px;" class="layui-btn layui-btn-normal layui-btn-sm"  />
+			<form id="upfile" name="upfile" method="post"
+				enctype="multipart/form-data" style="display: none;">
+				<input id="file" name="file" type="file" accept=".xls,.xlsx"
+					style="display: none;" onchange="confirmfile();" />
+			</form>
+			<input type="button" id="out" style="padding-bottom: 0px;padding-top: 0px;" value="导出Excel"
+				class="layui-btn layui-btn layui-btn-sm" /></div>
+			<div class="layui-form">
+				<table id="tb" class="layui-table">
+					<colgroup>
+						<col width="150" />
+						<col width="150" />
+						<col width="200" />
+						<col />
+					</colgroup>
+					<thead>
+						<tr id="head">
+							<th>ID</th>
+							<th>姓名</th>
+							<th>年龄</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" id="columns" value="柱状图"
+		class="layui-btn layui-btn-normal" /> <input type="button" id="pie"
+		value="饼图" class="layui-btn layui-btn-normal" /> <input type="button"
+		id="line" value="折线图" class="layui-btn layui-btn-normal" /> <input
+		type="button" id="radar" value="雷达图"
+		class="layui-btn layui-btn-normal" /> <input type="hidden" id="flag"
+		value="columns" class="layui-btn layui-btn-normal" />
+		<div id="container"></div>
+	</span>
+</body>
+</html>

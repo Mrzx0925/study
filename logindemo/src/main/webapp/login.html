@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>登录页</title>
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+
+<body>
+    <div class="login-main">
+        <header class="layui-elip" style="width: 82%">登录页</header>
+        <!-- 表单选项 -->
+        <div class="layui-input-inline" style="width: 85%">
+            <a class="accountlogin" href="javascript:accountlogin();">账号登录</a> <a class="codelogin"
+                href="javascript:codelogin();">验证码登录</a>
+        </div>
+        <form id="accountform" name="accountform" style="margin-bottom: 0%">
+            <div class="layui-input-inline">
+                <div class="layui-inline" style="width: 85%">
+                    <input type="text" id="account_1" name="account_1" placeholder="请输入手机/邮箱" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-input-inline">
+                <div class="layui-inline" style="width: 85%">
+                    <input type="password" id="password" name="password" placeholder="请输入密码" class="layui-input"
+                        style="float: left">
+                </div>
+            </div>
+        </form>
+        <form id="codeform" name="codeform" hidden style="margin-bottom: 0%">
+            <div class="layui-input-inline">
+                <div class="layui-inline" style="width: 85%">
+                    <input type="text" id="account_2" name="account_2" placeholder="请输入手机/邮箱" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-input-inline">
+                <div class="layui-inline" style="width: 44%">
+                    <input type="text" id="code" name="code" placeholder="请输入验证码" class="layui-input"
+                        style="float: left">
+                </div>
+                <div class="layui-inline" style="width: 40%">
+                    <input type="button" id="confirm" name="confirm" value="获取验证码" class="layui-btn"
+                        style="float: right">
+                </div>
+            </div>
+        </form>
+        <div class="layui-input-inline">
+            <div class="layui-inline" style="width: 65%">
+                <input type="text" id="imagecode" name="imagecode" placeholder="请输入图片验证码" class="layui-input"
+                    style="float: left">
+            </div>
+            <img src="http://localhost:8080/logindemo/zx/resteasy/image" style="width: 80px; height: 30px;" alt="验证码"
+                id="images" onclick='this.src=this.src+"?"+Math.random()' />
+        </div>
+        <input type="button" class="layui-btn" id="btn" name="btn" value="登录"
+            style="width: 85%; margin-top: 3%"></input>
+        <hr style="width: 85%" />
+        <p style="width: 85%">
+            <a href="register.html" class="fl">没有账号?去注册</a><a href="javascript:alert('请通过验证码登录进行密码重置');" class="fr">忘记密码？</a>
+        </p>
+    </div>
+ 
+    <input type="hidden" id="loginflag" value="accountlogin">
+</body>
+
+</html>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-form.js"></script>
+<script src="js/login.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="js/load.js"></script>

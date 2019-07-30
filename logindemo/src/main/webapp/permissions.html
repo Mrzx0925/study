@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<link rel="stylesheet" href="css/layui.css">
+<link rel="stylesheet" href="css/per.css">
+<body>
+	<form name="myform" id="myform">
+    <div class="mydiv">
+        <input type="text" id="content" placeholder="输入用户id或账号" name = "cond" style="margin-left: 220px;height: 26px;margin-right: 20px;"> 
+        <input type="button"  id="query" class="layui-btn" value="提交查询">  <input type="button"  id= "update" class="layui-btn layui-btn-normal" value="提交修改">  
+        <table class="layui-table">
+            <thead> 
+                <tr>
+                    <td>ID</td>
+                    <td>增加</td>
+                    <td>删除</th>
+                    <td>修改</th>
+                    <td>查询</td>
+                    <td>导入Excel</th>
+                    <td>导出Excel</th>
+
+                </tr>
+            </thead>
+            <tr>
+                <td id="id">  
+              
+                </td>
+                <td>
+                    <!--单元格开始-->
+                    <input type="radio" name="add" value="1" />有&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="add" value="0" />无
+                </td>
+                <td>
+                    <!--单元格开始-->
+                    <input type="radio" name="delete" value="1" />有&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="delete" value="0" />无
+                </td>
+                <td>
+                    <!--单元格开始-->
+                    <input type="radio" name="update" value="1" />有&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="update" value="0" />无
+                </td>
+                <td>
+                    <!--单元格开始-->
+                    <input type="radio" name="query" value="1" />有&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="query" value="0" />无
+                </td>
+                <td>
+                    <!--单元格开始-->
+                    <input type="radio" name="in" value="1" />有&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="in" value="0" />无
+                </td>
+                <td>
+                    <!--单元格开始-->
+                    <input type="radio" name="out" value="1" />有&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="out" value="0" />无
+                </td>
+            </tr>
+        </table>
+        <p style="float: right;font-family: '仿宋';"><a href="index.html"><==返回主界面</a></p>
+    </div>
+	</form>
+</body>
+	<input type="hidden" id="btid" value="">
+</html>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/per.js"></script>
+<script src="js/jquery-form.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<script type="text/javascript" src="js/load.js"></script>
